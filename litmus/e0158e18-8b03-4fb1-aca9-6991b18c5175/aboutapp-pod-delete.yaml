@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: 10505bcb-9564-4bad-8875-a95bd0fb9df1
-    revision_id: 9b0e876c-976e-4bf5-a8b3-b44303d61eda
+    revision_id: 8bbbfd65-5468-486c-b4d0-5114cc23a2e9
     workflow_id: 1c78c85b-1847-4d65-adae-f4b1ac06b409
     workflows.argoproj.io/controller-instanceid: 10505bcb-9564-4bad-8875-a95bd0fb9df1
   name: aboutapp-pod-delete

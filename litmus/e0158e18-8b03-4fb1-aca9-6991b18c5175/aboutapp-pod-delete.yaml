@@ -31,8 +31,8 @@ spec:
         name: install-chaos-faults
         template: install-chaos-faults
     - - arguments: {}
-        name: pod-delete-bw0
-        template: pod-delete-bw0
+        name: pod-delete-ag0
+        template: pod-delete-ag0
     - - arguments: {}
         name: cleanup-chaos-resources
         template: cleanup-chaos-resources
@@ -48,8 +48,8 @@ spec:
       resources: {}
     inputs:
       artifacts:
-      - name: pod-delete-bw0
-        path: /tmp/pod-delete-bw0.yaml
+      - name: pod-delete-ag0
+        path: /tmp/pod-delete-ag0.yaml
         raw:
           data: |
             apiVersion: litmuschaos.io/v1alpha1
@@ -218,15 +218,15 @@ spec:
     outputs: {}
   - container:
       args:
-      - -file=/tmp/chaosengine-pod-delete-bw0.yaml
+      - -file=/tmp/chaosengine-pod-delete-ag0.yaml
       - -saveName=/tmp/engine-name
       image: docker.io/litmuschaos/litmus-checker:2.11.0
       name: ""
       resources: {}
     inputs:
       artifacts:
-      - name: pod-delete-bw0
-        path: /tmp/chaosengine-pod-delete-bw0.yaml
+      - name: pod-delete-ag0
+        path: /tmp/chaosengine-pod-delete-ag0.yaml
         raw:
           data: |
             apiVersion: litmuschaos.io/v1alpha1
@@ -238,7 +238,7 @@ spec:
                 workflow_name: aboutapp-pod-delete
               annotations:
                 probeRef: '[{"name":"FakeProbe","mode":"Continuous"}]'
-              generateName: pod-delete-bw0
+              generateName: pod-delete-ag0
             spec:
               appinfo:
                 appns: bakura001
@@ -274,7 +274,7 @@ spec:
     metadata:
       labels:
         weight: "10"
-    name: pod-delete-bw0
+    name: pod-delete-ag0
     outputs: {}
 status:
   finishedAt: null
